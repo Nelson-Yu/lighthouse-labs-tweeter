@@ -28,6 +28,6 @@ body {
 main {
   margin: auto;
   width: 450px;
-  padding-top: 140px;
+  padding: 140px 0px;
   background-color: white;
 }
