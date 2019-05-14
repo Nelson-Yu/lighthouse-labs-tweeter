@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     if (counter < 0) {
       text.css("color", "red");
-    } else if (counter > 0) {
+    } else {
       text.css("color", "black");
     }
 
