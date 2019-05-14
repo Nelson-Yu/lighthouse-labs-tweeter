@@ -1,3 +1,5 @@
+/*Main Container with compose tweets - the user*/
+
 .new-tweet {
   background-color: #ECECEC;
   border: 1px solid lightgrey;
@@ -23,10 +25,57 @@ section textarea {
   font-style: italic;
 }
 
+/*Tweet Containers following main container*/
+
 #tweet-container {
-  background-color: #ECECEC;
-  border: 1px solid lightgrey;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 10px;
-  padding: 15px;
-  margin: 1em 2em;
+  margin: 0em 2em;
+}
+
+.tweet {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  margin-bottom: 10px;
+  opacity: 0.80;
+}
+
+.tweet:hover {
+  border: 1px solid grey;
+  opacity: 1.0;
+}
+
+.profile-header {
+  border-radius: 5px 5px 0 0;
+  background: #ECECEC;
+  padding: 5px 10px;
+}
+
+.profile-pic {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+
+.profile-name {
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.profile-handle {
+  float: right;
+  display: inline-block;
+}
+
+.tweet-body {
+  word-wrap: break-word;
+  padding: 0px 10px;
+}
+
+.tweet-footer {
+  border-top: 1px solid lightgrey;
+  color: grey;
+  font-size: 80%;
+  padding-left: 10px;
 }
