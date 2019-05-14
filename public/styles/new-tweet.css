@@ -35,10 +35,12 @@ section textarea {
 }
 
 .tweet {
-  border-radius: 5px;
+  position: relative;
   border: 1px solid lightgrey;
+  border-radius: 5px;
   margin-bottom: 10px;
   opacity: 0.80;
+
 }
 
 .tweet:hover {
@@ -47,30 +49,36 @@ section textarea {
 }
 
 .profile-header {
-  border-radius: 5px 5px 0 0;
-  background: #ECECEC;
+  background-color: #ECECEC;
+  float: left;
+  width: 100%;
+  height: 70px;
   padding: 5px 10px;
+  border-radius: 5px 5px 0 0;
 }
 
 .profile-pic {
+  float: left;
   width: 60px;
   height: 60px;
-  float: left;
+  border-radius: 5px;
 }
 
 .profile-name {
-  padding-left: 10px;
-  display: inline-block;
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 150%;
 }
 
 .profile-handle {
   float: right;
-  display: inline-block;
+  font-size: 80%;
 }
 
 .tweet-body {
+  padding: 5px;
   word-wrap: break-word;
-  padding: 0px 10px;
 }
 
 .tweet-footer {
