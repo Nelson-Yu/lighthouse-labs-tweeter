@@ -27,7 +27,7 @@ section textarea {
 
 /*Tweet Containers following main container*/
 
-#tweet-container {
+#tweets-container {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
@@ -35,7 +35,6 @@ section textarea {
 }
 
 .tweet {
-  position: relative;
   border: 1px solid lightgrey;
   border-radius: 5px;
   margin-bottom: 10px;
