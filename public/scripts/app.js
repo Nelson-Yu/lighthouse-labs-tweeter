@@ -1,11 +1,11 @@
-$(function () {
+$(document).ready(function () {
 
 //Loop through each object in the array and apply the creattTweetElement function
 //Then appen the created tweet element to the tweets-container id in the HTML
   function renderTweets(tweets) {
     for (key of tweets) {
       let eachTweet = createTweetElement(key);
-      $("#tweets-container").append(eachTweet);
+      $("#tweets-container").prepend(eachTweet);
     }
   }
 
@@ -52,13 +52,27 @@ $(function () {
     return $tweet;
   }
 
+// This function checks the validity of the tweet by looking at whether an empty string or a tweet with over 140 characters is submitted
+  function validTweet() {
+    const text = $("#tweet-content").val().length;
+    if (text === 0) {
+      alert("Please write a tweet!");
+      return false;
+    } else if (text > 140) {
+      alert("Please keep your tweet 140 characters or less!")
+      return false;
+    }
+
+    return true;
+  }
+
+//This function gets the JSON of the data from /tweets, then with the JSON data renderTweers() is used to display the tweets in the main container
   function loadTweets() {
-    $.getJSON('/tweets').done((data) => {
+    $.getJSON("/tweets").done((data) => {
       renderTweets(data);
     });
   }
 
+//Calls the loadTweets() to display the currently stored tweets from /tweets
   loadTweets();
 });
-
-
