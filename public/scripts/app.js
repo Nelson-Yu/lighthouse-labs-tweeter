@@ -91,6 +91,7 @@ $(document).ready(function () {
 // Use slidetoggle
   function toggleForm() {
     $(".new-tweet").slideToggle();
+    $("#tweet-content").focus();
   }
 
 //This is an event handler where when the compose button is clicked the .new-tweet box is toggled to slide
