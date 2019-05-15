@@ -55,6 +55,7 @@ $(document).ready(function () {
 // This function checks the validity of the tweet by looking at whether an empty string or a tweet with over 140 characters is submitted
   function validTweet() {
     const text = $("#tweet-content").val().length;
+
     if (text === 0) {
       alert("Please write a tweet!");
       return false;
@@ -66,12 +67,29 @@ $(document).ready(function () {
     return true;
   }
 
+// This function uses ajax to POST a new tweet to the /tweets, when the process is done it runs the loadTweets() which renders all the tweets from /tweets
+  function submitTweet(event) {
+    event.preventDefault();
+    if (validTweet()) {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: $(this).serialize()
+      }).done(() => {
+          loadTweets();
+        });
+    }
+  }
+
 //This function gets the JSON of the data from /tweets, then with the JSON data renderTweers() is used to display the tweets in the main container
   function loadTweets() {
     $.getJSON("/tweets").done((data) => {
       renderTweets(data);
     });
   }
+
+//This is an event handler that triggers the submitTweet() when the "tweet" submit button is pressed on localhost:8080/
+  $("#submit-form").submit(submitTweet);
 
 //Calls the loadTweets() to display the currently stored tweets from /tweets
   loadTweets();
