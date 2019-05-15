@@ -88,6 +88,14 @@ $(document).ready(function () {
     });
   }
 
+// Use slidetoggle
+  function toggleForm() {
+    $(".new-tweet").slideToggle();
+  }
+
+//This is an event handler where when the compose button is clicked the .new-tweet box is toggled to slide
+  $(".compose").on("click", toggleForm);
+
 //This is an event handler that triggers the submitTweet() when the "tweet" submit button is pressed on localhost:8080/
   $("#submit-form").submit(submitTweet);
 
