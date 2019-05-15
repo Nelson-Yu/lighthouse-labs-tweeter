@@ -21,3 +21,22 @@
   margin-left: 10px;
   line-height: 80px;
 }
+
+#nav-bar .compose {
+  float: right;
+  height: 60px;
+  width: auto;
+  margin-top: 10px;
+  font-size: 150%;
+  color: #00a087;
+  background-color: #e8fdff;
+  border: 1px solid black;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+#nav-bar .compose:hover {
+  opacity: 1.0;
+  background-color: white;
+  color: black;
+}
