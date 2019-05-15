@@ -25,6 +25,16 @@ section textarea {
   font-style: italic;
 }
 
+.validate {
+  display: none;
+}
+
+.text-error {
+  display: inline-block;
+  font-weight: bold;
+  color: red;
+}
+
 /*Tweet Containers following main container*/
 
 #tweets-container {
@@ -38,7 +48,7 @@ section textarea {
   border: 1px solid lightgrey;
   border-radius: 5px;
   margin-bottom: 10px;
-  opacity: 0.80;
+  opacity: 0.8;
 
 }
 

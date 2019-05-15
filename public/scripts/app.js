@@ -55,15 +55,21 @@ $(document).ready(function () {
 // This function checks the validity of the tweet by looking at whether an empty string or a tweet with over 140 characters is submitted
   function validTweet() {
     const text = $("#tweet-content").val().length;
+    const errorElement = $(".validate");
 
     if (text === 0) {
-      alert("Please write a tweet!");
+      errorElement.addClass("text-error");
+      errorElement.text("Please write a tweet! 😡");
+      $(".text-error").slideDown();
       return false;
     } else if (text > 140) {
-      alert("Please keep your tweet 140 characters or less!")
+      errorElement.addClass("text-error");
+      errorElement.text("140 characters or less! 😡")
+      $(".text-error").slideDown();
       return false;
     }
 
+    $(".text-error").slideUp()
     return true;
   }
 
