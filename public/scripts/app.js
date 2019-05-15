@@ -88,7 +88,7 @@ $(document).ready(function () {
     });
   }
 
-// Use slidetoggle
+//This function uses slidetoggle() to toggle the submission form, it also uses focus() to autoselect textarea
   function toggleForm() {
     $(".new-tweet").slideToggle();
     $("#tweet-content").focus();
