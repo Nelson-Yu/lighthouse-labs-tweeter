@@ -24,7 +24,7 @@ $(document).ready(function () {
     let $tweet = $("<article>").addClass("tweet");
 
     let $header = $("<header>").addClass("profile-header");
-    ($tweet).append($header);
+    $tweet.append($header);
 
     let $userPic = $("<img>").addClass("profile-pic");
     $userPic.attr("src", user.avatars.small);
@@ -38,9 +38,12 @@ $(document).ready(function () {
     $userHandle.append(user.handle);
     $header.append($userHandle);
 
+    let $div = $("<div>");
+    $tweet.append($div);
+
     let $content = $("<p>").addClass("tweet-body");
     $content.append(text);
-    $tweet.append($content);
+    $div.append($content);
 
     let $footer = $("<footer>").addClass("tweet-footer");
     $tweet.append($footer);
@@ -76,12 +79,14 @@ $(document).ready(function () {
 // This function uses ajax to POST a new tweet to the /tweets, when the process is done it runs the loadTweets() which renders all the tweets from /tweets
   function submitTweet(event) {
     event.preventDefault();
+
     if (validTweet()) {
       $.ajax({
         method: "POST",
         url: "/tweets",
         data: $(this).serialize()
       }).done(() => {
+          $("#tweets-container").empty();
           loadTweets();
         });
     }
