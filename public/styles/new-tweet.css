@@ -6,6 +6,7 @@
   border-radius: 10px;
   padding: 15px;
   margin: 0em 2em;
+  display: none;
 }
 
 section h2 {
@@ -49,7 +50,6 @@ section textarea {
   border-radius: 5px;
   margin-bottom: 10px;
   opacity: 0.8;
-
 }
 
 .tweet:hover {
@@ -85,10 +85,9 @@ section textarea {
   font-size: 80%;
 }
 
-.text-container{
-}
-
 .tweet-body {
+  margin-top: 70px;
+  margin-bottom: 0px;
   padding: 20px;
   word-wrap: break-word;
 }
@@ -98,4 +97,24 @@ section textarea {
   color: grey;
   font-size: 80%;
   padding-left: 10px;
+}
+
+.tweet-time {
+  display: inline-block;
+}
+
+.tweet-icons {
+  display: none;
+}
+
+.tweet:hover .tweet-icons {
+  float: right;
+  display: inline-block;
+  color: lightblue;
+  padding: 5px;
+}
+
+.fa {
+  padding: 5px;
+  font-size: 150%;
 }

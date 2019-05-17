@@ -19,7 +19,7 @@ $(document).ready(function () {
   function createTweetElement(tweet) {
     let user = tweet.user;
     let text = tweet.content.text;
-    let date = tweet.created_at;
+    let date = moment(tweet.created_at);
 
     let $tweet = $("<article>").addClass("tweet");
 
@@ -49,8 +49,14 @@ $(document).ready(function () {
     $tweet.append($footer);
 
     let $tweetTime = $("<p>").addClass("tweet-time");
-    $tweetTime.append(changeTime(date));
+    $tweetTime.append(date.fromNow());
     $footer.append($tweetTime);
+
+    let $icons = $("<div>").addClass("tweet-icons");
+    $icons.append($("<i>").addClass("fa fa-flag"));
+    $icons.append($("<i>").addClass("fa fa-retweet"));
+    $icons.append($("<i>").addClass("fa fa-heart"));
+    $footer.append($icons);
 
     return $tweet;
   }
