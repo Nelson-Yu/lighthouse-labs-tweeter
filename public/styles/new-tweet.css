@@ -85,8 +85,11 @@ section textarea {
   font-size: 80%;
 }
 
+.text-container{
+}
+
 .tweet-body {
-  padding: 5px;
+  padding: 20px;
   word-wrap: break-word;
 }
 

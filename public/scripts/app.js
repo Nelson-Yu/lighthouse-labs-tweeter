@@ -38,7 +38,7 @@ $(document).ready(function () {
     $userHandle.append(user.handle);
     $header.append($userHandle);
 
-    let $div = $("<div>");
+    let $div = $("<div>").addClass("text-container");
     $tweet.append($div);
 
     let $content = $("<p>").addClass("tweet-body");
