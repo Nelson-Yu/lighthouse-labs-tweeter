@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 //Loop through each object in the array and apply the creattTweetElement function
-//Then appen the created tweet element to the tweets-container id in the HTML
+//Then prepend the created tweet element to the tweets-container id in the HTML, prepending allows for the most recent tweet to show at the top
   function renderTweets(tweets) {
     for (key of tweets) {
       let eachTweet = createTweetElement(key);
@@ -9,13 +9,9 @@ $(document).ready(function () {
     }
   }
 
-//Added a change time function to convert the unix time of 'created_at'
-  function changeTime (time) {
-    return new Date(time).toDateString();
-  }
-
 //Each let declaration starting at $tweet appends each component to the $tweet
-//When returned we will get the whole <article class="tweet">
+//When returned we will get the whole <article class="tweet"> and all it's children
+//Uses moment to change the unix time givne to a relative time (i.e. 5 days ago or 3 years ago)
   function createTweetElement(tweet) {
     let user = tweet.user;
     let text = tweet.content.text;
@@ -83,6 +79,7 @@ $(document).ready(function () {
   }
 
 // This function uses ajax to POST a new tweet to the /tweets, when the process is done it runs the loadTweets() which renders all the tweets from /tweets
+// The tweets-container is emptied prior to the loadTweets() so that the old tweets aren't loaded twice
   function submitTweet(event) {
     event.preventDefault();
 

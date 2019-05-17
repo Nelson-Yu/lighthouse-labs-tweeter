@@ -12,13 +12,12 @@ const app           = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// const db = require("./lib/in-memory-db");
-
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
     console.log(`Failed to connect: ${MONGODB_URI}`);
     throw err;
   }
+
   const DataHelpers = require("./lib/data-helpers.js")(db);
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
