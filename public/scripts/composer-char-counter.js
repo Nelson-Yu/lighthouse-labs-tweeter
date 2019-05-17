@@ -14,7 +14,7 @@ $(document).ready(function () {
     if (counter < 0) {
       text.css("color", "red");
     } else {
-      text.css("color", "black");
+      text.css("color", "white");
     }
 
     text.text(counter);

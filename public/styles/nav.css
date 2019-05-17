@@ -4,8 +4,8 @@
   height: 80px;
   width: 100%;
   padding: 0px 2em;
-  background-color: #00a087;
-  color: #e8fdff;
+  background-color: black;
+  color: white;
   z-index: 1;
 }
 
@@ -28,9 +28,9 @@
   width: auto;
   margin-top: 10px;
   font-size: 150%;
-  color: #00a087;
-  background-color: #e8fdff;
-  border: 1px solid black;
+  color: red;
+  background-color: white;
+  border: 1px solid #CC0000;
   border-radius: 10px;
   opacity: 0.8;
 }
@@ -38,5 +38,5 @@
 #nav-bar .compose:hover {
   opacity: 1.0;
   background-color: white;
-  color: black;
+  color: #CC0000;
 }
