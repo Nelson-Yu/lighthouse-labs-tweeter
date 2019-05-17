@@ -108,6 +108,28 @@ $(document).ready(function () {
     $("#tweet-content").focus();
   }
 
+//This function checks to see if the window is top if not then display button
+  function displayTop() {
+    if ($(this).scrollTop() > 100) {
+      $(".scroll-to-top").fadeIn();
+    } else {
+      $(".scroll-to-top").fadeOut();
+    }
+  }
+
+//This function allows for a "return to top" action when called
+  function returnToTop() {
+    $("html, body").animate({scrollTop : 0}, 300);
+    return false;
+  }
+
+//This is an event handler that displays the "Top" button when the window is not top
+  $(window).scroll(displayTop);
+
+//This is an event handler where when they scroll to top button is clicked, the window will scroll back to the top
+  $(".scroll-to-top").on("click", returnToTop);
+
+
 //This is an event handler where when the compose button is clicked the .new-tweet box is toggled to slide
   $(".compose").on("click", toggleForm);
 
